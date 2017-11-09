@@ -1,0 +1,53 @@
+虽然教程上只罗列了一些 Transition ，但是看文档，还是能发现不少 Transition 的直接子类。
+
+Transition
+Transition 在 XML 定义时有如下属性：
+
+android:duration 动画时长毫秒
+android:interpolator 动画使用的 interpolator
+android:matchOrder 过渡动画执行顺序
+android:startDelay 在过渡动画之前延迟时间 毫秒
+TransitionSet
+TransitionSet 在 XML 中有如下属性：
+
+android:transitionOrdering 过渡动画执行顺序，有两种值， together 和 sequential
+以下转场动画中原生提供的包括 Fade，Slide，Explode，但场景之间存在共享元素时，有如下的转场动画 changeBound，changeClipBounds，changeImageTransform，ChangeTransform，ChangeScroll。
+
+Fade
+渐隐渐显动画
+
+Fade 在 XML 中有如下属性：
+
+android:fadingMode 渐变模式， fade_in, fade_out , fade_in_out ，默认为 fade_in_out
+Slide
+元素从四个方向滑动进入
+
+Slide 属性：
+
+android:slideEdge 从那边滑动出，有 left, top, right, bottom, start, end 模式
+Explode
+屏幕中间上下移走
+
+ChangeBounds
+通过获取前后Scene 中 target view 的边界，并对这些 view 做动画，改变 View 的大小
+
+ChangeClipBounds
+获取前后 Scene 中 getClipBounds() 的边界，并做动画，有如下属性：
+
+android:resizeClip 通过改变 clipBounds 来改变 view，而不是改变view 自身的大小
+ChangeImageTransform
+通过获取开始和结束时 Scene 中 ImageView 的 matrix ，并对他们做动画。 和 ChangeBounds 一起使用，来对 ImageView 改变大小，形状，和 ScaleType 来使动画更加流畅。
+
+ChangeTransform
+获取 Scene 中的尺寸和旋转角度，并做动画，有如下属性：
+
+android:reparent 追踪父view 的变化
+android:reparentWithOverlay A parent change should use an overlay or affect the transform of the transitionining View.
+ChangeScroll
+改变滑动位置
+
+
+TransitionManager
+TransitionManager.go()
+beginDelayedTransition()
+setEnterTransition()/setSharedElementEnterTransition()

@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -16,6 +17,16 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".anim.AnimMainActivity"/>
+        <activity android:name=".anim.WidgetMoveActivity"/>
+        <activity android:name=".anim.WidgetSildeActivity"/>
+        <activity android:name=".anim.WidgetPathActivity"/>
+        <activity android:name=".anim.FadeScaleActivity"/>
+        <activity android:name=".anim.RecolorActivity"/>
+        <activity android:name=".anim.RotateActivity"/>
+        <activity android:name=".anim.ChangeTextActivity"/>
     </application>
 
 </manifest>
